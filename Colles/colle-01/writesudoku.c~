@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   writesudoku.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: barnaud <barnaud@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/07/18 19:50:20 by barnaud           #+#    #+#             */
+/*   Updated: 2015/07/18 20:25:46 by barnaud          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+void	sudoku(int argc, char **argv)
+{
+	int lignes;
+	int colonnes;
+	
+	lignes = 1;
+	colonnes = 0;
+	if (argc == 10)
+	{
+		while (lignes < 10)
+		{
+			while (colonnes < 9)
+			{
+				ft_putchar(argv[lignes][colonnes]);
+				ft_putchar(' ');
+				colonnes++;
+			}
+			ft_putchar('\n');
+			lignes++;
+			colonnes = 0;
+		}
+	}
+}
+
+int		main(int argc, char **argv)
+{
+	sudoku(argc, argv);
+	return(0);
+}

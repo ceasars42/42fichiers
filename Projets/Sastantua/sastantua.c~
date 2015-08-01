@@ -1,0 +1,72 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   sastantua.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: barnaud <barnaud@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2015/07/12 08:49:00 by barnaud           #+#    #+#             */
+/*   Updated: 2015/07/12 14:54:10 by barnaud          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include<unistd.h>
+
+void	ft_putchar(char c)
+{
+	write (1, &c, 1);
+}
+
+void	sastantua(int n)
+{
+	int lignes;
+	int lignesmax;
+	int cmax;
+	int etag;
+	int espacemax;
+	int espace;
+	int c;
+	int etagmax;
+
+	lignes = 0;
+	etag = 0;
+	c = 0;
+	cmax = 7;
+	espace = 0;
+	lignesmax = 3;
+	etagmax = n;
+	espacemax = 3 ;
+	
+
+	if (n > 0)
+	{
+		while (
+		while (espace < espacemax)
+		{
+			ft_putchar(' ');
+			espace++;
+			c++;
+		}
+		while (espace == espacemax)
+		{
+			ft_putchar('/');
+			espace++;
+			c++;
+		}
+		while (espace > espacemax && c < cmax -2)
+		{
+			ft_putchar('*');
+			c++;
+			if (c == cmax -2)
+			{
+				ft_putchar('\\');
+				ft_putchar('\n');
+			}
+		}
+	}
+}
+	
+int main (void)
+{
+	sastantua(1);
+	return (0);
+}
